@@ -1,26 +1,29 @@
 {
   "files": {
-    "main.css": "/mai-informatics/static/css/main.8be39cad.chunk.css",
-    "main.js": "/mai-informatics/static/js/main.f035825e.chunk.js",
-    "main.js.map": "/mai-informatics/static/js/main.f035825e.chunk.js.map",
+    "main.css": "/mai-informatics/static/css/main.c799c709.chunk.css",
+    "main.js": "/mai-informatics/static/js/main.55f9cbec.chunk.js",
+    "main.js.map": "/mai-informatics/static/js/main.55f9cbec.chunk.js.map",
     "runtime-main.js": "/mai-informatics/static/js/runtime-main.8740ee72.js",
     "runtime-main.js.map": "/mai-informatics/static/js/runtime-main.8740ee72.js.map",
     "static/css/2.bea6f0b1.chunk.css": "/mai-informatics/static/css/2.bea6f0b1.chunk.css",
-    "static/js/2.542bc092.chunk.js": "/mai-informatics/static/js/2.542bc092.chunk.js",
-    "static/js/2.542bc092.chunk.js.map": "/mai-informatics/static/js/2.542bc092.chunk.js.map",
+    "static/js/2.d0245e17.chunk.js": "/mai-informatics/static/js/2.d0245e17.chunk.js",
+    "static/js/2.d0245e17.chunk.js.map": "/mai-informatics/static/js/2.d0245e17.chunk.js.map",
     "index.html": "/mai-informatics/index.html",
-    "precache-manifest.bc6e0a99ae3ba8f55498a1e2f834d363.js": "/mai-informatics/precache-manifest.bc6e0a99ae3ba8f55498a1e2f834d363.js",
+    "precache-manifest.de06c79748694509d9631a700aae6449.js": "/mai-informatics/precache-manifest.de06c79748694509d9631a700aae6449.js",
     "service-worker.js": "/mai-informatics/service-worker.js",
     "static/css/2.bea6f0b1.chunk.css.map": "/mai-informatics/static/css/2.bea6f0b1.chunk.css.map",
-    "static/css/main.8be39cad.chunk.css.map": "/mai-informatics/static/css/main.8be39cad.chunk.css.map",
-    "static/js/2.542bc092.chunk.js.LICENSE": "/mai-informatics/static/js/2.542bc092.chunk.js.LICENSE",
-    "static/media/mai-logo.svg": "/mai-informatics/static/media/mai-logo.21d7490c.svg"
+    "static/css/main.c799c709.chunk.css.map": "/mai-informatics/static/css/main.c799c709.chunk.css.map",
+    "static/js/2.d0245e17.chunk.js.LICENSE": "/mai-informatics/static/js/2.d0245e17.chunk.js.LICENSE",
+    "static/media/excel.f9261152.svg": "/mai-informatics/static/media/excel.f9261152.svg",
+    "static/media/line-chart.b7479ee3.svg": "/mai-informatics/static/media/line-chart.b7479ee3.svg",
+    "static/media/mai-logo.svg": "/mai-informatics/static/media/mai-logo.21d7490c.svg",
+    "static/media/regex.1e0cf0b0.svg": "/mai-informatics/static/media/regex.1e0cf0b0.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.8740ee72.js",
     "static/css/2.bea6f0b1.chunk.css",
-    "static/js/2.542bc092.chunk.js",
-    "static/css/main.8be39cad.chunk.css",
-    "static/js/main.f035825e.chunk.js"
+    "static/js/2.d0245e17.chunk.js",
+    "static/css/main.c799c709.chunk.css",
+    "static/js/main.55f9cbec.chunk.js"
   ]
 }
