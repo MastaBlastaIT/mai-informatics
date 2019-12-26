@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/mai-informatics/static/css/main.c799c709.chunk.css",
-    "main.js": "/mai-informatics/static/js/main.1e63e1b5.chunk.js",
-    "main.js.map": "/mai-informatics/static/js/main.1e63e1b5.chunk.js.map",
+    "main.js": "/mai-informatics/static/js/main.7840e88c.chunk.js",
+    "main.js.map": "/mai-informatics/static/js/main.7840e88c.chunk.js.map",
     "runtime-main.js": "/mai-informatics/static/js/runtime-main.8740ee72.js",
     "runtime-main.js.map": "/mai-informatics/static/js/runtime-main.8740ee72.js.map",
     "static/css/2.aef8ad04.chunk.css": "/mai-informatics/static/css/2.aef8ad04.chunk.css",
     "static/js/2.ae5e1634.chunk.js": "/mai-informatics/static/js/2.ae5e1634.chunk.js",
     "static/js/2.ae5e1634.chunk.js.map": "/mai-informatics/static/js/2.ae5e1634.chunk.js.map",
     "index.html": "/mai-informatics/index.html",
-    "precache-manifest.140ad3e70ae8ca13d4ac5ffdd6ff2bae.js": "/mai-informatics/precache-manifest.140ad3e70ae8ca13d4ac5ffdd6ff2bae.js",
+    "precache-manifest.6477bd9d545c7968cd2749f0ffd1dcaf.js": "/mai-informatics/precache-manifest.6477bd9d545c7968cd2749f0ffd1dcaf.js",
     "service-worker.js": "/mai-informatics/service-worker.js",
     "static/css/2.aef8ad04.chunk.css.map": "/mai-informatics/static/css/2.aef8ad04.chunk.css.map",
     "static/css/main.c799c709.chunk.css.map": "/mai-informatics/static/css/main.c799c709.chunk.css.map",
@@ -24,6 +24,6 @@
     "static/css/2.aef8ad04.chunk.css",
     "static/js/2.ae5e1634.chunk.js",
     "static/css/main.c799c709.chunk.css",
-    "static/js/main.1e63e1b5.chunk.js"
+    "static/js/main.7840e88c.chunk.js"
   ]
 }

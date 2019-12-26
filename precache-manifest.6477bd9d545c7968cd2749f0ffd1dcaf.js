@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cefa7b59a342f342eb8eb6037c4cd82e",
+    "revision": "4b0c1e18cefc9c5018fbb57cda2f9877",
     "url": "/mai-informatics/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mai-informatics/static/css/2.aef8ad04.chunk.css"
   },
   {
-    "revision": "535cf6057ab3b3581630",
+    "revision": "f7f4c6c968355768f7a9",
     "url": "/mai-informatics/static/css/main.c799c709.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mai-informatics/static/js/2.ae5e1634.chunk.js.LICENSE"
   },
   {
-    "revision": "535cf6057ab3b3581630",
-    "url": "/mai-informatics/static/js/main.1e63e1b5.chunk.js"
+    "revision": "f7f4c6c968355768f7a9",
+    "url": "/mai-informatics/static/js/main.7840e88c.chunk.js"
   },
   {
     "revision": "744c7c98bbfbda74c73c",
