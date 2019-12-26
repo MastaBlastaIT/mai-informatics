@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "47c28eaa674d43d2f6fa0d289ebdfa5c",
+    "revision": "cefa7b59a342f342eb8eb6037c4cd82e",
     "url": "/mai-informatics/index.html"
   },
   {
-    "revision": "e4dd7a57125a94d49133",
+    "revision": "6298e9a9a6a42ad22b85",
     "url": "/mai-informatics/static/css/2.aef8ad04.chunk.css"
   },
   {
-    "revision": "08b2f3a1b92872430d05",
+    "revision": "535cf6057ab3b3581630",
     "url": "/mai-informatics/static/css/main.c799c709.chunk.css"
   },
   {
-    "revision": "e4dd7a57125a94d49133",
-    "url": "/mai-informatics/static/js/2.2f6c5bbe.chunk.js"
+    "revision": "6298e9a9a6a42ad22b85",
+    "url": "/mai-informatics/static/js/2.ae5e1634.chunk.js"
   },
   {
     "revision": "fb08aec389ff1d0e3b63dd26ad5ac153",
-    "url": "/mai-informatics/static/js/2.2f6c5bbe.chunk.js.LICENSE"
+    "url": "/mai-informatics/static/js/2.ae5e1634.chunk.js.LICENSE"
   },
   {
-    "revision": "08b2f3a1b92872430d05",
-    "url": "/mai-informatics/static/js/main.c56b93c3.chunk.js"
+    "revision": "535cf6057ab3b3581630",
+    "url": "/mai-informatics/static/js/main.1e63e1b5.chunk.js"
   },
   {
     "revision": "744c7c98bbfbda74c73c",
