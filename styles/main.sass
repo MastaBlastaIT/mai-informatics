@@ -1,0 +1,474 @@
+@import ./vars
+@import ./mixins
+
+html, body
+  +fit
+
+body
+  font-family: 'Open Sans', sans-serif !important
+
+.b-root
+  +fit
+
+a
+  color: #1890ff
+
+*:focus
+  outline: none
+
+/* ++ HELPERS ++ */
+
+.b-centered
+  +centered
+
+.b-fit
+  +fit
+
+.b-hidden
+  display: none
+
+.b-text-small
+  font-size: 85%
+
+.b-white
+  color: $white
+
+  svg path
+    fill: $white
+
+.b-white-back
+  background-color: $white
+
+.b-red
+  color: $red
+
+  svg path
+    fill: $red !important
+
+.b-red-back
+  background-color: $red
+
+.b-green
+  color: $green
+
+  svg path
+    fill: $green !important
+
+.b-green-back
+  background-color: $green
+
+.b-yellow
+  color: $yellow
+
+  svg path
+    fill: $yellow !important
+
+.b-yellow-back
+  background-color: $yellow
+
+.b-orange
+  color: $orange
+
+  svg path
+    fill: $orange !important
+
+.b-orange-back
+  background-color: $orange
+
+.b-grey
+  color: $grey
+
+  svg path
+    fill: $grey !important
+
+.b-grey-back
+  background-color: $grey
+
+/* -- HELPERS -- */
+
+.ant-layout-header
+  padding: 0 $gap
+//!! background-color: $background
+
+.ant-menu-dark, .ant-menu-dark .ant-menu-sub
+  background: #2a3f54
+
+// ++ SIDEBAR ++
+
+.ant-menu-inline .ant-menu-item, .ant-menu-inline .ant-menu-submenu-title
+  width: 100% !important
+
+.ant-menu-sub.ant-menu-inline
+  background-color: rgba(73, 114, 148, 0.07)
+
+.ant-menu-sub.ant-menu-inline > .ant-menu-item
+  padding-left: 58px !important
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-active
+  background-color: rgba(73, 114, 148, 0.07)
+  color: rgba(73, 114, 148, 0.87)
+
+  & > a
+    color: inherit
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected
+  background-color: #497294
+  color: $white
+
+  &:after
+    border-right: 0
+
+  & > a
+    color: inherit
+
+  svg path
+    fill: #fff
+
+// -- SIDEBAR --
+
+.ant-statistic-title
+  font-family: 'Open Sans', sans-serif
+  font-size: 12px
+  color: rgba(0, 15, 39, 0.5)
+
+.ant-statistic-content-value
+  height: 32px
+
+.b-title
+  font-size: 20px !important
+  font-weight: 600 !important
+  color: #497294 !important
+  margin: 16px 0 !important
+
+
+// +++ FORM +++
+
+.ant-form-item-label > label
+  font-size: 12px
+  color: rgba(0, 15, 39, 0.5)
+
+.ant-form-item-label, .ant-form-item-control
+  line-height: 32px
+
+.ant-form-item
+  margin-bottom: 18px
+
+// --- FORM ---
+
+
+// +++ BUTTON +++
+
+.b-button-group
+  height: 64px
+
+  .b-button, .b-button-small
+    &:first-child
+      border-top-right-radius: 0 !important
+      border-bottom-right-radius: 0 !important
+
+    &:last-child
+      border-top-left-radius: 0 !important
+      border-bottom-left-radius: 0 !important
+
+.b-button
+  +button
+
+.b-button-small
+  +button
+  height: 32px !important
+
+a.ant-btn.b-button-small
+  line-height: 32px
+
+a.ant-btn.b-button
+  line-height: 40px
+
+// --- BUTTON ---
+
+
+// +++ INPUT +++
+
+.b-input
+  +input
+
+.b-input-small
+  +input
+  height: 32px !important
+
+textarea.ant-input
+  height: auto
+
+// --- INPUT ---
+
+// +++ SELECT +++
+
+.b-select
+  +select
+
+  &.b-select__dark
+    .ant-select-selection
+      color: $buttonColor
+      background-color: $buttonBackgroundColor
+
+      .ant-select-selection__placeholder
+        color: $buttonColor !important
+
+  &.b-select__small
+    .ant-select-selection
+      height: 32px !important
+
+      .ant-select-selection__rendered
+        line-height: 32px
+
+  &.b-select__big
+    .ant-select-selection
+      height: 40px !important
+
+      .ant-select-selection__rendered
+        line-height: 40px
+
+
+// --- SELECT ---
+
+svg.red
+  path[fill]
+    fill: #f00
+
+svg.green
+  path[fill]
+    fill: #008000
+
+svg.black
+  path[fill]
+    fill: rgba(0, 15, 39, 0.75)
+
+svg.rotate
+  transform: rotate(180deg)
+
+
+// +++ COLLAPSE +++
+
+.b-collapse
+  & > .b-button-icon
+    position: absolute
+    top: 50%
+    left: auto
+    right: 16px
+    display: inline-block
+    margin-top: 2px
+    font-size: 12px
+    line-height: 46px
+    transform: translateY(-50%)
+    width: 46px
+
+  &-container
+    box-sizing: border-box
+    padding-right: 24px
+
+.b-collapse-container .ant-collapse > .ant-collapse-item
+  border-bottom: 1px solid #d9d9d9 !important
+
+.b-collapse-container .ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow
+  position: absolute
+  top: 50%
+  left: auto
+  right: 16px
+  display: inline-block
+
+.b-collapse-container .ant-collapse > .ant-collapse-item > .ant-collapse-header
+  padding: 12px 60px 12px 16px
+  font-weight: 600
+  font-size: 18px
+  line-height: 18px
+
+.b-collapse-container .ant-collapse-content.ant-collapse-content-inactive
+  border-bottom: 1px solid #d9d9d9
+
+// --- COLLAPSE ---
+
+
+// +++ GRID +++
+.b-column
+  width: 900px
+
+@media (max-width: 2200px)
+  .b-column
+    min-width: 900px
+    width: 100%
+
+.b-grid
+  position: relative
+  display: flex
+  flex-flow: row wrap
+  justify-content: flex-start
+  // max-width: 3696px
+  max-width: 2212px
+  align-content: space-between
+
+  &-item
+    // width: 33.3333%
+    width: 50%
+    min-width: 320px
+
+@media (max-width: 2700px)
+  .b-grid .b-grid-item
+    // width: 33.3333%
+    width: 50%
+
+@media (max-width: 1920px)
+  .b-grid .b-grid-item
+    width: 50%
+
+@media (max-width: 1560px)
+  .b-grid .b-grid-item
+    width: 100%
+
+@media (max-width: 1000px)
+  .b-grid .b-grid-item
+    min-width: 320px
+    width: 100%
+
+    .ant-col-8
+      width: 100%
+
+// --- GRID ---
+
+.b-details
+  .ant-collapse-header
+    padding: 16px 0
+
+  .ant-collapse-content > .ant-collapse-content-box
+    padding: 16px 0
+
+  & > .ant-collapse-item > .ant-collapse-header
+    padding-left: 0
+
+.b-bullet
+  display: inline-block
+  width: 16px
+  height: 16px
+  border-radius: 16px
+  vertical-align: sub
+
+  &.yellow
+    background-color: $yellow
+    border: 1px solid #c0c0c0
+
+  &.green
+    background-color: $green
+    border: 1px solid #c0c0c0
+
+  &.orange
+    background-color: $orange
+    border: 1px solid #c0c0c0
+
+  &.red
+    background-color: $red
+    border: 1px solid #c0c0c0
+
+  &.grey
+    background-color: $grey
+    border: 1px solid #c0c0c0
+
+  &.transparent
+    background-color: transparent
+    border: 1px solid #c0c0c0
+
+.b-contract-tooltip .ant-tooltip-inner
+  width: 475px
+
+.b-site-tooltip .ant-tooltip-inner
+  width: 600px
+
+.imageloader
+  display: inline
+
+.ext-filter-form-item
+  .ant-form-item-label
+    line-height: 28px
+    font-size: 12px
+    text-overflow: ellipsis
+
+  label
+    color: $grey
+
+.ext-filter-form-item.ant-form-item
+  margin-bottom: 8px
+
+.right-block
+  display: flex
+  justify-content: flex-end
+  position: absolute
+  top: 0
+  right: 0
+  width: 180px
+  padding: 12px 0 12px 12px
+
+.font-green
+  color: $green
+
+  &.circle
+    padding-left: 10px
+
+    &::before
+      content: ''
+      background: $green
+      width: 6px
+      height: 6px
+      border-radius: 60px
+      position: absolute
+      top: 13px
+      left: 0
+
+.font-orange
+  color: $orange
+
+  &.circle
+    padding-left: 10px
+
+    &::before
+      content: ''
+      background: $orange
+      width: 6px
+      height: 6px
+      border-radius: 60px
+      position: absolute
+      top: 13px
+      left: 0
+
+.font-yellow
+  color: $yellow
+
+  &.circle
+    padding-left: 10px
+
+    &::before
+      content: ''
+      background: $yellow
+      width: 6px
+      height: 6px
+      border-radius: 60px
+      position: absolute
+      top: 13px
+      left: 0
+
+.font-red
+  color: $red
+
+  &.circle
+    padding-left: 10px
+
+    &::before
+      content: ''
+      background: $red
+      width: 6px
+      height: 6px
+      border-radius: 60px
+      position: absolute
+      top: 13px
+      left: 0
+
+.b-button-icon
+  i
+    svg
+      fill: rgba(73, 114, 148, 0.75)

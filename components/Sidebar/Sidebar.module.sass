@@ -1,0 +1,60 @@
+@import '../../styles/vars'
+
+.root
+  background-color: $white
+
+  box-shadow: 1px 0 1px 0 rgba(73, 114, 148, 0.25)
+
+  li
+    &:first-child
+      margin-top: 0
+    &[class~="ant-menu-submenu-selected"]:not([class~="ant-menu-submenu-open"])
+      div[class~="ant-menu-submenu-title"]
+        background-color: #e7f7ff
+    &[class~="ant-menu-item"]
+      margin: 0 !important
+      &:last-child
+        margin-bottom: 4px !important
+
+.menu
+  border-right: 0 !important
+
+  color: $mainColor
+
+  overflow-y: auto
+  height: calc(100vh - 71px)
+
+.submenu
+  color: $mainColor
+
+.logo
+  height: 70px
+  border-bottom: 1px solid $borderColor
+  transition: height 0.1s ease-in
+
+  img
+    display: block
+    padding: 10px 10px 10px 15px
+    height: 100%
+    margin: 0 auto
+
+.collapsed
+  height: 50px
+
+.icon
+  width: 24px
+  height: 24px
+  vertical-align: middle
+
+  svg path
+    fill: $mainColor
+
+.trigger
+  font-size: 18px
+  line-height: 64px
+  padding: 0 24px
+  cursor: pointer
+  transition: color 0.3s
+
+.trigger:hover
+  color: #1890ff
