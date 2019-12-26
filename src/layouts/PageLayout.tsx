@@ -5,7 +5,7 @@ import Helmet from "react-helmet";
 
 class PageLayout extends Component<any, any> {
   public render() {
-    let { title, back, style } = this.props;
+    let { children, title, back, style } = this.props;
 
     back = back || "#fff";
 
@@ -22,6 +22,7 @@ class PageLayout extends Component<any, any> {
         <Helmet title={title} />
 
         {title ? <h1 className="b-title">{title}</h1> : null}
+        {children}
       </Layout>
     );
   }
