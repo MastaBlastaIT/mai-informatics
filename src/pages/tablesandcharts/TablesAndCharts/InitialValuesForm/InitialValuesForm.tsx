@@ -1,111 +1,50 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { Form, Row, Col, Input } from "antd";
 import { FormComponentProps } from "antd/lib/form";
-import { isNil } from "lodash";
+import { NumberRoot } from "models/excel";
+import { WrappedFormUtils } from "antd/lib/form/Form";
 
 const gutter = 16;
 const md = 4;
 
-type FormTypes = "variable" | "exponent";
+// type FormTypes = "variable" | "exponent";
+//
+// const ValidationMessages = {
+//   not_a_number: "Не число",
+//   not_an_integer: "Не целое",
+// };
 
-declare const InitialFormValidateStatuses: [
-  "success",
-  "warning",
-  "error",
-  "validating",
-  ""
-];
-
-declare const ValidationMessages: {
-  not_a_number: "Не число";
-  not_an_integer: "Не целое";
-};
-
-interface ValidateFieldParams {
-  status: typeof InitialFormValidateStatuses[number];
-  message: string;
+interface InitialValuesFormProps extends FormComponentProps {
+  diagram: NumberRoot;
+  onInit: (form: WrappedFormUtils) => void;
 }
 
-interface ValidateFields {
-  variable?: ValidateFieldParams;
-  exponent?: ValidateFieldParams;
-}
+const InitialValuesForm: React.FC<InitialValuesFormProps> = props => {
+  const { diagram, onInit, form } = props;
 
-export function toNum(strNum: string): number {
-  return isNil(strNum) || strNum === "" ? NaN : +strNum;
-}
+  const { getFieldDecorator } = form;
 
-const InitialValuesForm: React.FC<FormComponentProps> = props => {
-  const { getFieldDecorator } = props.form;
-
-  const [validationStatus, setValidationStatus] = useState<ValidateFields>({});
-
-  const rules = [
-    {
-      required: true,
-      message: "Не должно быть пустым"
-    }
-  ];
-
-  const validate = (value: string, type?: FormTypes): ValidateFieldParams => {
-    const numValue = toNum(value);
-    if (isNaN(numValue) || !value.replace(/\s/g, ""))
-      return {
-        status: "error",
-        message: ValidationMessages.not_a_number
-      };
-    if (type === "exponent" && !Number.isInteger(numValue)) {
-      return {
-        status: "error",
-        message: ValidationMessages.not_an_integer
-      };
-    }
-    return {
-      status: "success",
-      message: ""
-    };
-  };
-
-  const onInputHandler = (e: any) => {
-    const inputType: FormTypes = e.currentTarget.id;
-
-    if (inputType === "variable") {
-      setValidationStatus({
-        variable: validate(e.currentTarget.value)
-      });
-    } else {
-      setValidationStatus({
-        exponent: validate(e.currentTarget.value, "exponent")
-      });
-    }
-  };
+  useEffect(() => {
+    onInit(form);
+    form.setFieldsValue(diagram);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Form>
       <Row gutter={gutter}>
         <Col md={md}>
-          <Form.Item
-            label="Переменная X (вещественное)"
-            validateStatus={validationStatus.variable?.status}
-            help={validationStatus.variable?.message}
-            hasFeedback
-          >
+          <Form.Item label="Переменная X (вещественное)">
             {getFieldDecorator("variable", {
-              rules
-            })(<Input autoFocus onInput={onInputHandler} />)}
+              initialValue: diagram.variable
+            })(<Input autoFocus />)}
           </Form.Item>
         </Col>
 
         <Col md={md}>
-          <Form.Item
-            label="Показатель степени N (целое)"
-            validateStatus={validationStatus.exponent?.status}
-            help={validationStatus.exponent?.message}
-            hasFeedback
-          >
+          <Form.Item label="Показатель степени N (целое)">
             {getFieldDecorator("exponent", {
-              rules
-            })(<Input onInput={onInputHandler} />)}
+              initialValue: diagram.exponent
+            })(<Input />)}
           </Form.Item>
         </Col>
       </Row>
@@ -113,4 +52,4 @@ const InitialValuesForm: React.FC<FormComponentProps> = props => {
   );
 };
 
-export default Form.create()(InitialValuesForm);
+export default Form.create<InitialValuesFormProps>()(InitialValuesForm);
