@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RouteComponentProps } from "react-router";
 import PageLayout from "layouts/PageLayout";
 import InitialValuesForm from "pages/tablesandcharts/TablesAndCharts/InitialValuesForm/InitialValuesForm";
 import ComputationalTable from "pages/tablesandcharts/TablesAndCharts/ComputationalTable";
 import { WrappedFormUtils } from "antd/lib/form/Form";
-import { NumberRoot } from "models/excel";
+import { NumberRoot, TableRequestData, TableRowsData } from "models/excel";
 import {
   createColumnDefs,
   createRowData,
   randomDataSet
 } from "helpers/helpers";
+import TablesAndChartsService from "services/TablesAndChartsService";
 
 const rowsCount = 8;
 const stepsToFinish = 8;
@@ -29,7 +30,7 @@ const TablesAndCharts: React.FC<RouteComponentProps> = () => {
 
   const [rowData, setRowData] = useState<any>(rData);
 
-  const processButtonHandler = () => {
+  /*const processButtonHandler = () => {
     if (form && form.isFieldsTouched()) {
       const qq = createRowData(
         rowsCount,
@@ -39,7 +40,29 @@ const TablesAndCharts: React.FC<RouteComponentProps> = () => {
       );
       setRowData(qq);
     }
+  };*/
+
+  const tableParams: TableRequestData = {
+    cols_count: stepsToFinish,
+    rows_count: rowsCount,
+    variable: diagram.variable,
+    exponent: diagram.exponent
   };
+
+  useEffect(() => {
+    let unmounted = false;
+    TablesAndChartsService.getTableRows(tableParams).then(
+      (rows: TableRowsData) => {
+        if (unmounted) {
+          return;
+        }
+        console.log(rows);
+      }
+    );
+    return () => {
+      unmounted = true;
+    };
+  }, []);
 
   return (
     <PageLayout title="Таблицы и графики">

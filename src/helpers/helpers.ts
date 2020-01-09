@@ -1,6 +1,6 @@
 import { ReactText } from "react";
 import { isNil } from "lodash";
-import { rowDataType } from "models/excel";
+import { TableRow } from "models/excel";
 import { ColDef } from "ag-grid-community";
 
 export function toNum(strNum: string | ReactText | undefined): number {
@@ -38,7 +38,7 @@ export function createRowData(
   dataSet: Array<number>
 ) {
   return new Array(rowsCount).fill(0).map((v, i) => {
-    const resRowData: rowDataType = {};
+    const resRowData: TableRow = {};
     resRowData["a0"] = dataSet[i];
 
     columnDefs.slice(1).forEach((v, i) => {
