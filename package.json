@@ -4,6 +4,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ag-grid-community/react": "^22.1.2",
+    "@ag-grid-enterprise/all-modules": "^22.1.2",
     "@hot-loader/react-dom": "^16.11.0",
     "@types/jest": "^24.0.24",
     "@types/lodash": "^4.14.149",

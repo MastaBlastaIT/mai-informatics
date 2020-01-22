@@ -1,0 +1,74 @@
+{
+  "page": "Страница",
+  "more": "ещё",
+  "to": "к",
+  "of": "из",
+  "next": "Следующая",
+  "last": "Последняя",
+  "first": "Первая",
+  "previous": "Предыдущая",
+  "loadingOoo": "Загрузка...",
+
+  "selectAll": "Выбрать все",
+  "searchOoo": "Поиск...",
+  "blanks": "Пусто",
+
+  "filterOoo": "Фильтровать...",
+  "applyFilter": "Применить фильтр...",
+
+  "equals": "Эквивалентно",
+  "lessThan": "Меньше, чем",
+  "greaterThan": "Больше, чем",
+
+  "contains": "Содержит",
+  "startsWith": "Начинается с",
+  "endsWith": "Заканчивается на",
+
+  "group": "Группа",
+
+  "columns": "Столбцы",
+  "rowGroupColumns": "Столбцы группировки по строкам",
+  "rowGroupColumnsEmptyMessage": "Перетяните сюда для группировки по строкам",
+  "valueColumns": "Столбцы со значениями",
+  "pivotMode": "Режим сводной таблицы",
+  "groups": "Группировка по строкам",
+  "values": "Значения",
+  "pivots": "Заголовки столбцов",
+  "valueColumnsEmptyMessage": "Перетяните сюда для агрегации",
+  "pivotColumnsEmptyMessage": "Перетяните сюда, чтобы задать загаловки столбцов",
+  "toolPanelButton": "Панель инструментов",
+
+  "noRowsToShow": "Нет данных",
+
+  "pinColumn": "Закрепить колонку",
+  "valueAggregation": "Агрегация по значению",
+  "autosizeThiscolumn": "Задать авторазмер этой колонки",
+  "autosizeAllColumns": "Задать авторазмер всех колонок",
+  "groupBy": "Группировать по",
+  "ungroupBy": "Разгруппировать по",
+  "resetColumns": "Сбросить столбцы",
+  "expandAll": "Развернуть все",
+  "collapseAll": "Свернуть все",
+  "toolPanel": "Панель инструментов",
+  "export": "Экспорт",
+  "csvExport": "Экспорт в CSV",
+  "excelExport": "Экспорт в Excel",
+  "excelXmlExport": "Экспорт в XML",
+
+  "pinLeft": "Закрепить слева",
+  "pinRight": "Закрепить справа",
+  "noPin": "Не прикреплять",
+
+  "sum": "Сумма",
+  "min": "Минимум",
+  "max": "Максимум",
+  "none": "Пусто",
+  "count": "Количество",
+  "average": "Усредненное значение",
+
+  "copy": "Копировать",
+  "copyWithHeaders": "Копировать с заголовком",
+  "ctrlC": "Ctrl+C",
+  "paste": "Вставить",
+  "ctrlV": "Ctrl+V"
+}
