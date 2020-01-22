@@ -1,56 +1,84 @@
 import { ReactText } from "react";
 import { isNil } from "lodash";
-import { TableRow } from "models/excel";
-import { ColDef } from "ag-grid-community";
+import {
+  FormFields,
+  NumberRoot,
+  TableRow,
+  ValidationRules
+} from "models/excel";
 
 export function toNum(strNum: string | ReactText | undefined): number {
   return isNil(strNum) ? NaN : +strNum;
 }
 
-export function randomDataSet(
-  dataSetSize: number,
-  minValue: number,
-  maxValue: number
-): Array<number> {
-  return new Array(dataSetSize).fill(0).map(() => {
-    const getRandomValue = Math.random() * maxValue + minValue;
-    return toNum(
-      Math.round(Math.random())
-        ? Math.round(getRandomValue)
-        : getRandomValue.toFixed(2)
-    );
+export function validateFormItem(
+  value: string,
+  checkIfInteger: boolean
+): ValidationRules {
+  if (value.length === 0)
+    return {
+      message: "Поле пустое",
+      valid: false
+    };
+
+  const convertedValue = toNum(value);
+
+  if (isNaN(convertedValue))
+    return {
+      message: "Введено не число",
+      valid: false
+    };
+
+  if (convertedValue === 0)
+    return {
+      message: "Введен ноль",
+      valid: false
+    };
+
+  if (checkIfInteger && !Number.isInteger(convertedValue))
+    return {
+      message: "Не целое число",
+      valid: false
+    };
+
+  return {
+    message: "",
+    valid: true
+  };
+}
+
+function createColumnsNames(count: number) {
+  return new Array(count).fill(0).map((v, i) => {
+    const pref = Math.floor(i / 26);
+    const prefLetter = pref === 0 ? "" : String.fromCharCode(pref + 64);
+    return prefLetter + String.fromCharCode((i % 26) + 65);
   });
 }
 
 export function createColumnDefs(count: number) {
-  return new Array(count).fill(0).map((v, i) => {
+  return createColumnsNames(count).map(v => {
     return {
-      headerName: "a" + i,
-      field: "a" + i
+      headerName: v,
+      field: v,
+      cellClassRules: {
+        "rag-red": function(params: any) {
+          const checkVar = toNum(params.value);
+          return params.value !== null && (isNaN(checkVar) || checkVar === 0);
+        }
+      }
     };
   });
 }
 
-export function createRowData(
-  rowsCount: number,
-  columnDefs: Array<ColDef>,
-  diagram: any,
-  dataSet: Array<number>
-) {
-  return new Array(rowsCount).fill(0).map((v, i) => {
-    const resRowData: TableRow = {};
-    resRowData["a0"] = dataSet[i];
+export function toNumberRoot(formFields: FormFields): NumberRoot {
+  return {
+    variable: formFields.variable,
+    exponent: formFields.exponent,
+    cols_count: formFields.cols_count
+  };
+}
 
-    columnDefs.slice(1).forEach((v, i) => {
-      if (v.field) {
-        const prevValue = resRowData[v.field[0] + i];
-        resRowData[v.field] =
-          (prevValue +
-            diagram.variable / Math.pow(prevValue, diagram.exponent - 1)) /
-          2;
-      }
-    });
-
-    return resRowData;
-  });
+export function toInitialsArray(tableRows: TableRow[]): Array<number> {
+  const resArray = Object.values(tableRows[0]).map(v => toNum(v));
+  return resArray.filter(v => isNaN(v) || v === 0).length > 0 ? [] : resArray;
 }

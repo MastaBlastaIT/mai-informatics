@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
-import { Form, Row, Col, Input } from "antd";
+import { Form, Row, Col, Input, Button } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import { NumberRoot } from "models/excel";
 import { WrappedFormUtils } from "antd/lib/form/Form";
+import { validateFormItem } from "helpers/helpers";
 
 const gutter = 16;
 const md = 4;
@@ -17,10 +18,11 @@ const md = 4;
 interface InitialValuesFormProps extends FormComponentProps {
   diagram: NumberRoot;
   onInit: (form: WrappedFormUtils) => void;
+  handleSubmit: () => void;
 }
 
 const InitialValuesForm: React.FC<InitialValuesFormProps> = props => {
-  const { diagram, onInit, form } = props;
+  const { diagram, onInit, handleSubmit, form } = props;
 
   const { getFieldDecorator } = form;
 
@@ -30,12 +32,34 @@ const InitialValuesForm: React.FC<InitialValuesFormProps> = props => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <Form>
+    <Form
+      onSubmit={() => {
+        const errors = Object.values(form.getFieldsError()).reduce(
+          (res, item) => {
+            return res + (item ? item.length : 0);
+          },
+          0
+        );
+        !errors && form.isFieldsTouched() && handleSubmit();
+      }}
+    >
       <Row gutter={gutter}>
         <Col md={md}>
           <Form.Item label="Переменная X (вещественное)">
             {getFieldDecorator("variable", {
-              initialValue: diagram.variable
+              initialValue: diagram.variable,
+              rules: [
+                {
+                  required: true,
+                  validator: async (rule, value) => {
+                    const validate = validateFormItem(value, true);
+                    if (!validate.valid) {
+                      throw new Error(validate.message);
+                    }
+                    return validate.valid;
+                  }
+                }
+              ]
             })(<Input autoFocus />)}
           </Form.Item>
         </Col>
@@ -43,8 +67,55 @@ const InitialValuesForm: React.FC<InitialValuesFormProps> = props => {
         <Col md={md}>
           <Form.Item label="Показатель степени N (целое)">
             {getFieldDecorator("exponent", {
-              initialValue: diagram.exponent
+              initialValue: diagram.exponent,
+              rules: [
+                {
+                  required: true,
+                  validator: async (rule, value) => {
+                    const validate = validateFormItem(value, true);
+                    if (!validate.valid) {
+                      throw new Error(validate.message);
+                    }
+                    return validate.valid;
+                  }
+                }
+              ]
             })(<Input />)}
+          </Form.Item>
+        </Col>
+
+        <Col md={md}>
+          <Form.Item label="Кол-во нач. предположений">
+            {getFieldDecorator("cols_count", {
+              initialValue: diagram.cols_count,
+              rules: [
+                {
+                  required: true,
+                  validator: async (rule, value) => {
+                    const validate = validateFormItem(value, true);
+                    if (!validate.valid) {
+                      throw new Error(validate.message);
+                    }
+                    return validate.valid;
+                  }
+                }
+              ]
+            })(<Input />)}
+          </Form.Item>
+        </Col>
+
+        <Col md={3}>
+          <Form.Item>
+            <Button
+              htmlType="submit"
+              type="primary"
+              style={{
+                position: "relative",
+                top: 32.5
+              }}
+            >
+              Применить
+            </Button>
           </Form.Item>
         </Col>
       </Row>
