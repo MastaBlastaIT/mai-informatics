@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import MenuService from "services/MenuService";
 
 import { ReactComponent as IconTable } from "assets/icons/excel.svg";
-import { ReactComponent as IconRegEx } from "assets/icons/regex.svg";
+import { ReactComponent as IconRegExp } from "assets/icons/regexp.svg";
 import { ReactComponent as IconGraph } from "assets/icons/line-chart.svg";
 import { ROUTE_MAIN } from "constants/routesNames";
 
@@ -16,7 +16,7 @@ const { Sider } = Layout;
 
 const icons = {
   tablesAndCharts: () => <IconTable />,
-  regEx: () => <IconRegEx />,
+  regExp: () => <IconRegExp />,
   bfs: () => <IconGraph />
 } as any;
 

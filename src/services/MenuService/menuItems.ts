@@ -1,14 +1,14 @@
 import {
   ROUTE_BFS,
-  ROUTE_REGEX,
+  ROUTE_REGEXP,
   ROUTE_TABLES_AND_CHARTS
 } from "constants/routesNames";
 
 const menu = [
   {
     title: "01 - Регулярные выражения",
-    icon: "regEx",
-    path: ROUTE_REGEX
+    icon: "regExp",
+    path: ROUTE_REGEXP
   },
   {
     title: "02 - Таблицы и графики",

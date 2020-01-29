@@ -11,7 +11,7 @@ export function toNum(strNum: string | ReactText | undefined): number {
   return isNil(strNum) ? NaN : +strNum;
 }
 
-export function validateFormItem(
+export function validateChartsFormItem(
   value: string,
   checkIfInteger: boolean
 ): ValidationRules {

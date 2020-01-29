@@ -3,7 +3,7 @@ import { Form, Row, Col, Input, Button } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import { NumberRoot } from "models/excel";
 import { WrappedFormUtils } from "antd/lib/form/Form";
-import { validateFormItem } from "helpers/helpers";
+import { validateChartsFormItem } from "helpers/helpers";
 
 const gutter = 16;
 const md = 4;
@@ -52,7 +52,7 @@ const InitialValuesForm: React.FC<InitialValuesFormProps> = props => {
                 {
                   required: true,
                   validator: async (rule, value) => {
-                    const validate = validateFormItem(value, true);
+                    const validate = validateChartsFormItem(value, true);
                     if (!validate.valid) {
                       throw new Error(validate.message);
                     }
@@ -72,7 +72,7 @@ const InitialValuesForm: React.FC<InitialValuesFormProps> = props => {
                 {
                   required: true,
                   validator: async (rule, value) => {
-                    const validate = validateFormItem(value, true);
+                    const validate = validateChartsFormItem(value, true);
                     if (!validate.valid) {
                       throw new Error(validate.message);
                     }
@@ -92,7 +92,7 @@ const InitialValuesForm: React.FC<InitialValuesFormProps> = props => {
                 {
                   required: true,
                   validator: async (rule, value) => {
-                    const validate = validateFormItem(value, true);
+                    const validate = validateChartsFormItem(value, true);
                     if (!validate.valid) {
                       throw new Error(validate.message);
                     }

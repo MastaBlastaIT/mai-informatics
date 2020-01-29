@@ -1,16 +1,16 @@
 import {
   ROUTE_BFS,
-  ROUTE_REGEX,
+  ROUTE_REGEXP,
   ROUTE_TABLES_AND_CHARTS
 } from "constants/routesNames";
 import TablesAndCharts from "pages/tablesandcharts/TablesAndCharts";
-import RegEx from "pages/regex/TablesAndCharts";
 import BFSPage from "pages/bfs/BFSPage";
+import RegExp from "pages/regexp/RegExp";
 
 const routes = [
   {
-    path: ROUTE_REGEX,
-    component: RegEx,
+    path: ROUTE_REGEXP,
+    component: RegExp,
     exact: true
   },
   {
