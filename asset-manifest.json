@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/mai-informatics/static/css/main.838aa119.chunk.css",
-    "main.js": "/mai-informatics/static/js/main.3d843564.chunk.js",
-    "main.js.map": "/mai-informatics/static/js/main.3d843564.chunk.js.map",
+    "main.js": "/mai-informatics/static/js/main.6e1f10e3.chunk.js",
+    "main.js.map": "/mai-informatics/static/js/main.6e1f10e3.chunk.js.map",
     "runtime-main.js": "/mai-informatics/static/js/runtime-main.ccda426f.js",
     "runtime-main.js.map": "/mai-informatics/static/js/runtime-main.ccda426f.js.map",
     "static/css/2.cb20c768.chunk.css": "/mai-informatics/static/css/2.cb20c768.chunk.css",
-    "static/js/2.a791556d.chunk.js": "/mai-informatics/static/js/2.a791556d.chunk.js",
-    "static/js/2.a791556d.chunk.js.map": "/mai-informatics/static/js/2.a791556d.chunk.js.map",
+    "static/js/2.6f9dae1b.chunk.js": "/mai-informatics/static/js/2.6f9dae1b.chunk.js",
+    "static/js/2.6f9dae1b.chunk.js.map": "/mai-informatics/static/js/2.6f9dae1b.chunk.js.map",
     "index.html": "/mai-informatics/index.html",
-    "precache-manifest.e2bf9ebbe701752a6b08b8ebe975822d.js": "/mai-informatics/precache-manifest.e2bf9ebbe701752a6b08b8ebe975822d.js",
+    "precache-manifest.14802cdfb763f5f1f869e11f4fa6a170.js": "/mai-informatics/precache-manifest.14802cdfb763f5f1f869e11f4fa6a170.js",
     "service-worker.js": "/mai-informatics/service-worker.js",
     "static/css/2.cb20c768.chunk.css.map": "/mai-informatics/static/css/2.cb20c768.chunk.css.map",
     "static/css/main.838aa119.chunk.css.map": "/mai-informatics/static/css/main.838aa119.chunk.css.map",
-    "static/js/2.a791556d.chunk.js.LICENSE.txt": "/mai-informatics/static/js/2.a791556d.chunk.js.LICENSE.txt",
+    "static/js/2.6f9dae1b.chunk.js.LICENSE.txt": "/mai-informatics/static/js/2.6f9dae1b.chunk.js.LICENSE.txt",
     "static/media/excel.f9261152.svg": "/mai-informatics/static/media/excel.f9261152.svg",
     "static/media/line-chart.b7479ee3.svg": "/mai-informatics/static/media/line-chart.b7479ee3.svg",
     "static/media/mai-logo.svg": "/mai-informatics/static/media/mai-logo.21d7490c.svg",
@@ -22,8 +22,8 @@
   "entrypoints": [
     "static/js/runtime-main.ccda426f.js",
     "static/css/2.cb20c768.chunk.css",
-    "static/js/2.a791556d.chunk.js",
+    "static/js/2.6f9dae1b.chunk.js",
     "static/css/main.838aa119.chunk.css",
-    "static/js/main.3d843564.chunk.js"
+    "static/js/main.6e1f10e3.chunk.js"
   ]
 }
