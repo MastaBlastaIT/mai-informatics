@@ -48,7 +48,7 @@ const RegExp: React.FC<RouteComponentProps> = () => {
         setLoading(true);
         const formFields = form.getFieldsValue();
         RegExpService.regExpFind({
-          text_type: formFields.text_type,
+          text_type: initialForm.text_type,
           regex_str: formFields.regex_str
         }).then(r => {
           setRegExpFoundData(r);

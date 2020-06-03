@@ -1,21 +1,24 @@
 import { hot } from "react-hot-loader/root";
+import { createBrowserHistory } from "history";
 import React from "react";
 
 import "antd/dist/antd.css";
 import "styles/main.sass";
 
 import DefaultLayout from "./layouts/DefaultLayout";
-import { HashRouter, Switch, Route } from "react-router-dom";
+import { Switch, Route, Router } from "react-router-dom";
 import pagesRoutes from "routes/pagesRoutes";
 import PageRoute from "routes/PageRoute";
 import Helmet from "react-helmet";
-import MainPage from "pages/main/MainPage";
+import MainPage from "pages/MainPage";
+
+const browserHistory = createBrowserHistory();
 
 const App: React.FC = () => {
   return (
     <React.Fragment>
       <Helmet defaultTitle="МАИ Информатика" titleTemplate="%s" />
-      <HashRouter basename="/" hashType="noslash">
+      <Router history={browserHistory}>
         <DefaultLayout>
           <Route exact key="/" path="/" component={MainPage} />
           <Switch>
@@ -24,7 +27,7 @@ const App: React.FC = () => {
             ))}
           </Switch>
         </DefaultLayout>
-      </HashRouter>
+      </Router>
     </React.Fragment>
   );
 };

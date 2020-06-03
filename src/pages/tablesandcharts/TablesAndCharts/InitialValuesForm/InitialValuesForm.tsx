@@ -28,21 +28,10 @@ const InitialValuesForm: React.FC<InitialValuesFormProps> = props => {
 
   useEffect(() => {
     onInit(form);
-    form.setFieldsValue(diagram);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <Form
-      onSubmit={() => {
-        const errors = Object.values(form.getFieldsError()).reduce(
-          (res, item) => {
-            return res + (item ? item.length : 0);
-          },
-          0
-        );
-        !errors && form.isFieldsTouched() && handleSubmit();
-      }}
-    >
+    <Form>
       <Row gutter={gutter}>
         <Col md={md}>
           <Form.Item label="Переменная X (вещественное)">
@@ -112,6 +101,15 @@ const InitialValuesForm: React.FC<InitialValuesFormProps> = props => {
               style={{
                 position: "relative",
                 top: 32.5
+              }}
+              onClick={() => {
+                const errors = Object.values(form.getFieldsError()).reduce(
+                  (res, item) => {
+                    return res + (item ? item.length : 0);
+                  },
+                  0
+                );
+                !errors && form.isFieldsTouched() && handleSubmit();
               }}
             >
               Применить

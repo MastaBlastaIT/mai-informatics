@@ -1,0 +1,28 @@
+@import 'vars'
+$regexHeight: 20px
+
+.regexpBlock
+  display: flex
+
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+
+  .regexpSpan, .regexpInput
+    height: $regexHeight
+    line-height: $regexHeight
+
+  .regexpSpan
+    display: inline-block
+    color: blue
+    font-size: $regexHeight
+
+  .regexpInput *
+    display: inline-block
+    font-size: $regexHeight - 2
+    text-align: center
+    border: none
+    box-shadow: none
+    outline: none
+    padding: 0
+

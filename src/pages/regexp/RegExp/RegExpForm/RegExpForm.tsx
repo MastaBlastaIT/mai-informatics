@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
-import { Form, Row, Col, Input, Button } from "antd";
+import { Button, Col, Form, Row } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import { WrappedFormUtils } from "antd/lib/form/Form";
 import { RegExpRequestData } from "models/regexp";
+import styles from "styles/RegExp.module.sass";
+import AutosizeInput from "react-input-autosize";
 
 const gutter = 16;
 const md = 4;
@@ -20,39 +22,34 @@ const RegExpForm: React.FC<RegExpFormProps> = props => {
 
   useEffect(() => {
     onInit(form);
-    form.setFieldsValue(initialForm);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <Form
-      onSubmit={() => {
-        const errors = Object.values(form.getFieldsError()).reduce(
-          (res, item) => {
-            return res + (item ? item.length : 0);
-          },
-          0
-        );
-        !errors && form.isFieldsTouched() && handleSubmit();
-      }}
-    >
+    <Form>
       <Row gutter={gutter}>
         <Col md={md}>
-          <Form.Item label="Регулярное выражение">
-            {getFieldDecorator("regex_str", {
-              initialValue: initialForm.regex_str,
-              rules: [
-                {
-                  required: true,
-                  validator: async (rule, value) => {
-                    if (!(value instanceof RegExp)) {
-                      throw new Error("Не RegExp");
+          <div className={styles.regexpBlock}>
+            <span className={styles.regexpSpan}>/</span>
+            <Form.Item label="Регулярное выражение">
+              {getFieldDecorator("regex_str", {
+                rules: [
+                  {
+                    required: true,
+                    validator: async (rule, value) => {
+                      /*if (!(value instanceof RegExp)) {
+                        throw new Error("Не RegExp");
+                      }*/
+                      return true;
                     }
-                    return true;
                   }
+                ],
+                getValueFromEvent: e => {
+                  return e.target.value;
                 }
-              ]
-            })(<Input />)}
-          </Form.Item>
+              })(<AutosizeInput className={styles.regexpInput} autoFocus />)}
+            </Form.Item>
+            <span className={styles.regexpSpan}>/</span>
+          </div>
         </Col>
 
         <Col md={3}>
@@ -63,6 +60,15 @@ const RegExpForm: React.FC<RegExpFormProps> = props => {
               style={{
                 position: "relative",
                 top: 32.5
+              }}
+              onClick={() => {
+                const errors = Object.values(form.getFieldsError()).reduce(
+                  (res, item) => {
+                    return res + (item ? item.length : 0);
+                  },
+                  0
+                );
+                !errors && form.isFieldsTouched() && handleSubmit();
               }}
             >
               Применить
