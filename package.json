@@ -19,7 +19,7 @@
     "ag-grid-community": "^22.1.1",
     "ag-grid-react": "^22.1.1",
     "antd": "^3.26.3",
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
     "lodash": "^4.17.15",
